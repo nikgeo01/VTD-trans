@@ -1,0 +1,98 @@
+.history {
+  background-color: var(--primary-black);
+  padding: 6rem 2rem;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  color: var(--golden);
+  font-family: "Poetsen One", sans-serif;
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  color: #e0e0e0;
+  font-size: 1.2rem;
+  margin-bottom: 4rem;
+}
+
+.statsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.statCard {
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(198, 163, 85, 0.1), rgba(198, 163, 85, 0.05));
+  border: 1px solid rgba(198, 163, 85, 0.2);
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(198, 163, 85, 0.1);
+}
+
+.number {
+  color: var(--golden);
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  font-family: "Poetsen One", sans-serif;
+}
+
+.suffix {
+  font-size: 2.5rem;
+  opacity: 0.8;
+}
+
+.label {
+  color: #e0e0e0;
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+.growingText {
+  color: var(--golden);
+  font-size: 1.5rem;
+  font-style: italic;
+  opacity: 0.9;
+  margin-top: 2rem;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .history {
+    padding: 4rem 1.5rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .statsContainer {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .number {
+    font-size: 3rem;
+  }
+
+  .suffix {
+    font-size: 2rem;
+  }
+
+  .label {
+    font-size: 1.1rem;
+  }
+} 

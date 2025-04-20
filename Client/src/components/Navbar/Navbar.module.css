@@ -1,0 +1,149 @@
+:root {
+  --primary-black: #0A0A0A;
+  --golden: #FFD700;
+  --white: #FFFFFF;
+}
+
+.navbar {
+  background-color: var(--primary-black);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 80px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  z-index: 1001;
+  height: 60px;
+}
+
+.logoImage {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.navLinks {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.navLink {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--golden);
+  transition: width 0.3s ease;
+}
+
+.navLink:hover {
+  color: var(--golden);
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+/* Burger Menu */
+.burgerMenu {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+  width: 30px;
+  height: 24px;
+  position: relative;
+}
+
+.burgerBar {
+  display: block;
+  width: 30px;
+  height: 2px;
+  background-color: var(--white);
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.burgerBar::before,
+.burgerBar::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background-color: var(--white);
+  transition: all 0.3s ease-in-out;
+}
+
+.burgerBar::before {
+  transform: translateY(-8px);
+}
+
+.burgerBar::after {
+  transform: translateY(8px);
+}
+
+/* Burger Menu Open State */
+.burgerBar.open {
+  background-color: transparent;
+}
+
+.burgerBar.open::before {
+  transform: rotate(45deg);
+}
+
+.burgerBar.open::after {
+  transform: rotate(-45deg);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .burgerMenu {
+    display: block;
+  }
+
+  .navLinks {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--primary-black);
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    transition: right 0.3s ease-in-out;
+    padding: 2rem;
+  }
+
+  .navLinks.open {
+    right: 0;
+  }
+
+  .navLink {
+    font-size: 1.5rem;
+  }
+} 
